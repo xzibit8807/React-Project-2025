@@ -1,6 +1,6 @@
 export default function MainComp() {
     return (
-        <div class="banner_section layout_padding">
+        <div class="main-page">
             <div class="container">
                 <div id="my_slider" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
