@@ -349,19 +349,19 @@
     position: absolute;
     left: 15px;
     top: 115%;
-    background-color: #599ee9;
+    background-color: #6da8e7;
   }
 
   #my_slider .carousel-control-prev,
   #my_slider .carousel-control-next {
     width: 65px;
     height: 65px;
-    background: #ffffff;
+    background-color: rgba(84, 238, 87, 0.57);
     opacity: 1;
     font-size: 30px;
     color: #000;
     border-radius: 100px;
-  }
+  } 
 
   #my_slider .carousel-control-prev:hover,
   #my_slider .carousel-control-next:hover,
@@ -380,7 +380,7 @@
   .about_section {
     width: 100%;
     float: left;
-    background-color: #f2f7fd;
+    background-color: #f2f7fdd4;
     height: auto;
     padding-bottom: 90px;
   }
@@ -493,7 +493,7 @@
     float: right;
     font-size: 18px;
     text-align: center;
-    background-color: #fcfcfd;
+    background-color: #fdfcfd;
     color: #191919;
     border-left: 10px solid #599ee9;
     border-radius: 30px;
@@ -666,11 +666,11 @@
   .email_box {
     width: 100%;
     float: left;
-    /* background-color: #ffffff; */
-    /* border-radius: 20px; */
+    background-color: #ffffff;
+    border-radius: 20px;
     height: auto;
-    /* padding: 50px 20px; */
-    /* opacity: 0.80; */
+    padding: 50px 20px;
+    opacity: 0.80;
   }
 
   .email-bt {
@@ -705,7 +705,7 @@
   .main_bt {
     background: #ed1c24;
     border: none;
-    color: #faf9f9;
+    color: #f9faf9;
     width: 160px;
     height: 58px;
     font-size: 24px;
@@ -833,7 +833,7 @@
     width: 100%;
     float: left;
     font-size: 16px;
-    color: #ffffff;
+    color: #6a095d;
     text-align: center;
     margin-left: 0px;
   }
