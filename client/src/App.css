@@ -2,12 +2,13 @@
   .nav-a {
     color: black;
     text-decoration: none;
-    padding: 9px;
-    border-radius: 5px;
-    margin: 0 10px;
+    padding: 30px;
+    border-radius: 15x; 
+    margin: 0 5px;
     font-size: 20px;
-    transition: background-color 0.3s ease;
+    transition:  background-color 0.3s ease;
     cursor: pointer;
+    white-space: nowrap;
   }
 
   .collapse navbar-collapse {
