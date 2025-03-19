@@ -35,19 +35,21 @@ body {
     background: #0414a7;
 } */
 
-.container {
+.container404 {
     width: 90%;
     margin: auto;
     max-width: 640px;
+    color: greenyellow;
 }
 
 .bsod {
     padding-top: 10%;
+    background-color: rgb(71, 27, 175);
 }
 
 .bsod .neg {
     text-align: center;
-    color: #0414a7;
+    color: #04a76b;
 }
 
 .bsod .neg .bg {
@@ -71,6 +73,7 @@ body {
     margin: auto;
     font-size: 30px;
     text-align: center;
+    color: chartreuse;
 }
 
 .bsod .nav .link:hover,

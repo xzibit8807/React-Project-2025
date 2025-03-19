@@ -1,7 +1,7 @@
 import "./noPage.css"
 export default function NoPageTemp() {
     return (
-        <main className="bsod container">
+        <main className="bsod container404">
             <h1 className="neg title"><span className="bg">Error - 404</span></h1>
             <p>An error has occured, to continue:</p>
             <p>* You chose the wrong way.</p>
