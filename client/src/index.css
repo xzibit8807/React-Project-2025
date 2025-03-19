@@ -1183,6 +1183,8 @@ pre code {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
+    padding-bottom: 130px;
+    padding-top: 50px;
   }
 
   .col-md-7 {

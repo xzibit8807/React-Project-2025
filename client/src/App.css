@@ -1,4 +1,4 @@
-  /* Header CSS */
+/* Header CSS */
   .nav-a {
     color: black;
     text-decoration: none;
@@ -166,7 +166,7 @@
   }
 
   h1 {
-    font-size: 24px
+    font: normal 2.75rem/1.05em "VT323", monospace; 
   }
 
   h2 {
@@ -372,6 +372,7 @@
     color: #685191;
     font-weight: 600;
     text-transform: uppercase;
+    padding-top: 60px;
 
   }
 
@@ -821,7 +822,7 @@
     width: 100%;
     float: left;
     font-size: 28px;
-    color: rgb(235, 235, 235);
+    color: rgb(152, 226, 240);
     font-weight: bold;
     padding: 25px 0px;
   }

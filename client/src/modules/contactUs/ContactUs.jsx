@@ -9,21 +9,21 @@ export default function ContactUsComp() {
                                 <div className="container">
                                     <form action="/action_page.php">
                                         <div className="form-group">
-                                            <input type="text" className="email-bt" placeholder="Name" name="Name"/>
+                                            <input type="text" className="email-bt" placeholder="Name" name="name"/>
                                         </div>
                                         <div className="form-group">
-                                            <input type="text" className="email-bt" placeholder="Email" name="Name"/>
+                                            <input type="text" className="email-bt" placeholder="Email" name="email"/>
                                         </div>
                                         <div className="form-group">
-                                            <input type="text" className="email-bt" placeholder="Phone Numbar" name="Email" />
+                                            <input type="text" className="email-bt" placeholder="Phone Number" name="phone" />
                                         </div>
 
                                         <div className="form-group">
-                                            <textarea className="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
+                                            <textarea className="massage-bt" placeholder="Massage" rows="5" id="comment" name="message"></textarea>
                                         </div>
                                     </form>
                                 </div>
-                                <div className="main_bt"><a href="#">SEND</a></div>
+                                <div className="main_bt"><a href="/">SEND</a></div>
                             </div>
                         </div>
                     </div>

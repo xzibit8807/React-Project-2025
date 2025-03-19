@@ -2,7 +2,7 @@ export default function ProductsComp() {
     return (
         <div className="product_section layout_padding">
             <div className="container">
-                <div className="product_text">Our <span>products</span></div>
+                <h1 className="product_text">Our <span>products</span></h1>
                 <p className="long_text">It is a long established fact that a reader will be distracted by the readable content of a
                     page when looking at its layout. The point of using Lorem</p>
                 <div className="product_section_2">

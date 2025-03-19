@@ -8,8 +8,8 @@ export default function AboutComp() {
                     </div>
                     <div class="col-md-6">
                         <h1 class="about_text">ABOUT</h1>
-                        <p class="lorem_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                        <div class="shop_bt_2"><a href="#">Shop Now</a></div>
+                        <p class="lorem_text">This Page is for the use of seeing different Games witch are available and determination the best products out there.</p>
+                        <div class="shop_bt_2"><a href="/products">See Now</a></div>
                     </div>
                 </div>
             </div>

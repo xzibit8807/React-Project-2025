@@ -8,35 +8,9 @@ export default function MainComp() {
                             <div class="row">
                                 <div class="col-md-6">
                                     <h1 class="video_text">Video games</h1>
-                                    <h1 class="controller_text">controller</h1>
-                                    <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                                    <div class="shop_bt"><a href="#">Shop Now</a></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="image_1"><img src="images/img-1.png"/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h1 class="video_text">Video games</h1>
-                                    <h1 class="controller_text">controller</h1>
-                                    <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                                    <div class="shop_bt"><a href="#">Shop Now</a></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="image_1"><img src="images/img-1.png"/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h1 class="video_text">Video games</h1>
-                                    <h1 class="controller_text">controller</h1>
-                                    <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                                    <div class="shop_bt"><a href="#">Shop Now</a></div>
+                                    <h1 class="controller_text">Best Collection out there</h1>
+                                    <p class="banner_text">Welcome to the best Web Page for an Online Games Catalog. Here you can see different Games ,check if there are any comments and chose the ones you like the Most. You can Post Games and add Comments to make the experience for each User the best.</p>
+                                    <div class="shop_bt"><a href="/products">See Now</a></div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="image_1"><img src="images/img-1.png"/></div>
@@ -44,12 +18,6 @@ export default function MainComp() {
                             </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 </div>
             </div>
         </div>

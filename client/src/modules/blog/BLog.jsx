@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+    import React, { useState } from 'react';
 
 // Example data (in a real app, this would come from a server)
 const commentsData = [
@@ -30,6 +30,7 @@ export default function BlogComp() {
             <p className='blogP'>This is the content section for the blog post's.</p>
 
             <h2 className='blogTitle'>Comments from the users</h2>
+            <p className='blogP'>Here you can wright Comments for the Web Page ore your experience.</p>
             <ul className="comment-list">
                 {comments.map((comment) => (
                     <li key={comment.id}>
