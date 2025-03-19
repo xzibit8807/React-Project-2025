@@ -16,37 +16,119 @@
     overflow: hidden;
     transition: max-height 0.3s ease;
   }
+/* Blog CSS */
+.blogTitle {
+    margin-bottom: 20px;
+    color:rgb(106, 163, 49);
+    font-weight: bold;
+    text-align: center;
+    padding: 30px;
+    font-size: 55px;
+  }
+.blogP{
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #e0ecc6;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #007bff;
+    font-style:oblique;
+  }
 
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #666666;
+    font-size: 14px;
+    font-family: Poppins;
+    line-height: 1.80857;
+    font-weight: normal;
+    overflow-x: hidden;
+  }
 
-
-  /*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
-
-  @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
-  @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
-
-  @font-face {
-    font-family: "Righteous";
-    src: url("../fonts/Righteous-Regular.ttf");
-    src: url("../fonts/Lato-Regular.ttf");
+  
+  /* Blog post */
+  .blog-post {
+    background: #fff;
+    color:rgb(4, 95, 4);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Comments section */
+  .comments {
+    margin-top: 20px;
+  }
+  
+  /* Comment list */
+  .comment-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .comment-list li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .comment-list strong {
+    color: #007bff; /* Highlight usernames */
+    font-weight: bolder;
+    font-size: 17px;
+    margin-left: 15px;
+    background-color: #eddbdb;
+  }
+  
+  /* Comment form */
+  .comment-form {
+    margin-top: 20px;
+    margin-left: 185px;
+    margin-right: 185px;
+    padding-left: 50px;
+    padding-right: 50px;
+    
+  }
+  
+  .comment-form textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    color: #c61c35;
+  }
+  
+  .comment-form button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    font-weight: bolder;
+    font-style:inherit;
+    font-size: 18px;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .comment-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Message for logged-out users */
+  .logged-out-message {
+    color: #d9534f; /* Bootstrap danger color for warnings */
   }
 
 
-  /*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
-
-  @import url(animate.min.css);
-  @import url(normalize.css);
-  @import url(icomoon.css);
-  @import url(css/font-awesome.min.css);
-  @import url(meanmenu.css);
-  @import url(owl.carousel.min.css);
-  @import url(swiper.min.css);
-  @import url(slick.css);
-  @import url(jquery.fancybox.min.css);
-  @import url(jquery-ui.css);
-  @import url(nice-select.css);
-
-  /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
-
+/* other CCS */
   * {
     box-sizing: border-box !important;
     transition: ease all 0.5s;
@@ -54,15 +136,6 @@
 
   html {
     scroll-behavior: smooth;
-  }
-
-  body {
-    color: #666666;
-    font-size: 14px;
-    font-family: Poppins;
-    line-height: 1.80857;
-    font-weight: normal;
-    overflow-x: hidden;
   }
 
   a {
@@ -245,7 +318,7 @@
   }
 
   .navbar {
-    padding: 20px 30px;
+    padding: 13px 13px;
   }
 
   .navbar-expand-lg .navbar-nav .nav-link {
@@ -296,7 +369,7 @@
     width: 100%;
     float: left;
     font-size: 50px;
-    color: #fefeff;
+    color: #685191;
     font-weight: 600;
     text-transform: uppercase;
 
@@ -316,7 +389,7 @@
     width: 100%;
     float: left;
     font-size: 16px;
-    color: #fefeff;
+    color: #8f1474;
     font-weight: 500;
     margin-left: 0px;
     padding-top: 50px;
