@@ -31,7 +31,7 @@ export default function HeaderComp() {
                                 <a className="nav-a" href="/contact">CONTACT US</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-a" href="/"><img src="images/search-icon.png" /></a>
+                                <a className="nav-a" href="/search"><img src="images/search-icon.png" />Search</a>
                             </li>
                             <li className="nav-item active">
                                 <a className="nav-a" href="/login">SIGN IN</a>

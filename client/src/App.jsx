@@ -12,6 +12,7 @@ import BlogComp from "./modules/blog/BLog";
 import LoginModule from "./modules/userModules/login/Login";
 import RegisterModule from "./modules/userModules/register/Register";
 import NoPageTemp from "./modules/noPage/NoPage404";
+import SearchComp from "./modules/search/Search";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/products" element={<ProductsComp />} />
         <Route path="*" element={<NoPageTemp/>} />
         <Route path="/blog" element={<BlogComp/>}/>
+        <Route path="/search" element={<SearchComp/>} />
         <Route path="/login" element={<LoginModule/>}/>
         <Route path="/register" element={<RegisterModule/>}/>
       </Routes>
