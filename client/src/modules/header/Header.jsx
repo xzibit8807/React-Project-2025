@@ -1,6 +1,6 @@
 // import { useState } from "react";
 // import { Menu, X } from "lucide-react"; // Icons for the toggle button
-
+import './header.css'
 
 export default function HeaderComp() {
     // const [isOpen, setIsOpen] = useState(false);

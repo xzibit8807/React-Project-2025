@@ -1,0 +1,167 @@
+/* Footer CSS  */
+
+.section_footer {
+    width: 100%;
+    background-color: rgb(41, 40, 40);
+    padding: 30px 0;
+    color: white;
+}
+
+.containerFooter {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer_section_2 {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid #898989;
+    padding-bottom: 40px;
+}
+
+.footer_section_2>div {
+    flex: 1;
+    min-width: 250px;
+    /* Prevents columns from becoming too small */
+}
+
+.account_text {
+    font-size: 22px;
+    color: rgb(31, 147, 64);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.ipsum_text_2 {
+    font-size: 16px;
+    color: #d3d3d3;
+}
+
+.ipsum_text_2 a {
+    color: #599ee9;
+    text-decoration: none;
+}
+
+.ipsum_text_2 a:hover {
+    text-decoration: underline;
+}
+
+/* Useful Links */
+.useful_link ul {
+    list-style: none;
+    padding: 0;
+}
+
+.useful_link li {
+    margin-bottom: 8px;
+}
+
+.useful_link li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.useful_link li a:hover {
+    color: #599ee9;
+}
+
+/* Contact Section */
+.contactUs {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Newsletter */
+.Newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.email_text {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #ffffff;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.subscribr_bt {
+    width: 100%;
+    max-width: 200px;
+    font-size: 16px;
+    color: white;
+    background-color: #599ee9;
+    padding: 10px 0;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.subscribr_bt:hover {
+    background-color: #417ecb;
+}
+
+/* Social Icons */
+.social_icon {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social_icon ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social_icon li {
+    display: inline-block;
+}
+
+/* Copyright Section */
+.copyright_section {
+    width: 100%;
+    background-color: #599ee9;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.copyright_text {
+    font-size: 16px;
+    color: white;
+}
+
+.copyright_text a {
+    color: white;
+    text-decoration: none;
+}
+
+.copyright_text a:hover {
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer_section_2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Newsletter {
+        align-items: center;
+    }
+
+    .email_text,
+    .subscribr_bt {
+        width: 90%;
+    }
+}

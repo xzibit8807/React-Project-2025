@@ -4274,20 +4274,6 @@ input[type="button"].btn-block {
   background-color: #007bff;
 }
 
-.nav-fill .nav-item {
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  text-align: center;
-}
-
-.nav-justified .nav-item {
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  text-align: center;
-}
-
 .tab-content>.tab-pane {
   display: none;
 }

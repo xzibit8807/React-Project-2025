@@ -1,15 +1,17 @@
+import './footer.css'
+
 export default function FooterComp() {
     return (
-        <div className="section_footer ">
-            <div className="container">
+        <div className="section_footer">
+            <div className="containerFooter">
                 <div className="footer_section_2">
                     <div className="row">
-                        <div className="col-sm-6 col-md-6 col-lg-3">
+                        <div className="col-sm-3 col-md-4 col-lg-3">
                             <h2 className="account_text">About Us</h2>
                             <p className="ipsum_text_2">Web Collection of Video Games for all platforms.
                                 <a className="ipsum_text_2" href="/about">Go to About</a></p>
                         </div>
-                        <div className="col-sm-6 col-md-6 col-lg-3">
+                        <div className="col-sm-2 col-md-4 col-lg-3">
                             <h2 className="account_text">Useful Links</h2>
                             <div className="useful_link">
                                 <ul>
