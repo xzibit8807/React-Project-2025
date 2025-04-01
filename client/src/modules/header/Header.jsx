@@ -1,9 +1,14 @@
 // import { useState } from "react";
 // import { Menu, X } from "lucide-react"; // Icons for the toggle button
+// import { useContext } from 'react';
+// import useAuth from '../../hooks/auth';
+import { Link } from "react-router";
 import './header.css'
+
 
 export default function HeaderComp() {
     // const [isOpen, setIsOpen] = useState(false);
+    // const { email, isAuthenticated } = useAuth;
 
     return (
         <header className="nav">
@@ -14,38 +19,28 @@ export default function HeaderComp() {
                     <div className="logo"><a href="/"><img src="images/logo.png" /></a></div>
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <a className="nav-a" href="/">HOME</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-a" href="/about">ABOUT</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-a" href="/products">VIDEO GAMES</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-a" href="/blog">BLOG</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-a" href="/contact">CONTACT US</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-a" href="/search"><img src="images/search-icon.png" />Search</a>
-                            </li>
-                            <li className="nav-item active">
-                                <a className="nav-a" href="/login">SIGN IN</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-a" href="/register">REGISTER</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-a" href="/profile">PROFILE</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-a" href="/logout">LOG OUT</a>
-                            </li>
-                        </ul>
+                        {/* <ul className="navbar-nav mr-auto">
+                            <li className="nav-item"> */}
+                        <Link to="/" className="nav-item">HOME</Link>
+
+                        <Link  to="/about" className="nav-item">ABOUT</Link>
+
+                        <Link  to="/products" className="nav-item">VIDEO GAMES</Link>
+
+                        <Link to="/blog" className="nav-item">BLOG</Link>
+
+                        <Link to="/contact" className="nav-item">CONTACT US</Link>
+
+                        <Link to="/search" className="nav-item"><img src="images/search-icon.png" />Search</Link>
+
+                        <Link to="/login" className="nav-item">SIGN IN</Link>
+
+                        <Link to="/register" className="nav-item">REGISTER</Link>
+
+                        <Link to="/profile" className="nav-item">PROFILE</Link>
+
+                        <Link to="/logout" className="nav-item">LOG OUT</Link>
+
                     </div>
                 </nav>
 

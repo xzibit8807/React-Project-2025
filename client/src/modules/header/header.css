@@ -26,19 +26,6 @@
     width: 100%;
 }
 
-.nav-a {
-    color: black;
-    text-decoration: none;
-    display: flex;
-    padding: 18px;
-    border-radius: 15px;
-    margin: 0 5px;
-    font-size: 20px;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
 .navbar-nav {
     width: 100%;
     display: flex;
@@ -49,6 +36,16 @@
 .nav-item {
     flex: 1;
     text-align: center;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    padding: 18px;
+    border-radius: 15px;
+    margin: 0 5px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
 
