@@ -5,6 +5,7 @@
     margin: auto;
     max-width: 640px;
     color: greenyellow;
+    margin-top: 150px;
 }
 
 .bsod {
@@ -27,12 +28,12 @@
     margin-bottom: 50px;
 }
 
-.bsod .nav {
+.bsod .back {
     margin-top: 35px;
     text-align: center;
 }
 
-.bsod .nav .link {
+.bsod .back .link {
     text-decoration: none;
     padding: 0 9px 2px 8px;
     margin: auto;
@@ -41,8 +42,8 @@
     color: chartreuse;
 }
 
-.bsod .nav .link:hover,
-.bsod .nav .link:focus {
+.bsod .back .link:hover,
+.bsod .back .link:focus {
     background: #aaaaaa;
     color: #0414a7;
     text-align: center;
