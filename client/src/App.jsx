@@ -13,25 +13,28 @@ import LoginModule from "./modules/userModules/login/Login";
 import RegisterModule from "./modules/userModules/register/Register";
 import NoPageTemp from "./modules/noPage/NoPage404";
 import SearchComp from "./modules/search/Search";
+import { UserProvider } from "./hooks/context"
 
 
 function App() {
 
   return (
     <>
-      <HeaderComp />
-      <Routes>
-        <Route path="/" element={<MainComp />} />
-        <Route path="/about" element={<AboutComp />} />
-        <Route path="/contact" element={<ContactUsComp />} />
-        <Route path="/products" element={<ProductsComp />} />
-        <Route path="*" element={<NoPageTemp/>} />
-        <Route path="/blog" element={<BlogComp/>}/>
-        <Route path="/search" element={<SearchComp/>} />
-        <Route path="/login" element={<LoginModule/>}/>
-        <Route path="/register" element={<RegisterModule/>}/>
-      </Routes>
-      <FooterComp />
+      <UserProvider>
+        <HeaderComp />
+        <Routes>
+          <Route path="/" element={<MainComp />} />
+          <Route path="/about" element={<AboutComp />} />
+          <Route path="/contact" element={<ContactUsComp />} />
+          <Route path="/products" element={<ProductsComp />} />
+          <Route path="*" element={<NoPageTemp />} />
+          <Route path="/blog" element={<BlogComp />} />
+          <Route path="/search" element={<SearchComp />} />
+          <Route path="/login" element={<LoginModule />} />
+          <Route path="/register" element={<RegisterModule />} />
+        </Routes>
+        <FooterComp />
+      </UserProvider>
     </>
   )
 }

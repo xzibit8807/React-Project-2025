@@ -8,4 +8,12 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
     }
- 
+.loginScreen {
+    padding: 20px;
+    border-radius: 5px;
+    width: 350px;
+    margin-top: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+}

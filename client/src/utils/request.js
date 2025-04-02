@@ -1,8 +1,13 @@
 const request = async (method, url, data, options = {}) => {
+    options.headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        ...options.headers,
+    };
+    
     if (method !== 'GET') {
         options.method = method;
     }
-
 
     if (data) {
         options = {
@@ -14,9 +19,9 @@ const request = async (method, url, data, options = {}) => {
             body: JSON.stringify(data),
         }
     }
-
+    // options.credentials = 'include'; 
     const response = await fetch(url, options);
-
+    
     const responseContentType = response.headers.get('Content-Type');
     if (!responseContentType) {
         return;
@@ -29,10 +34,11 @@ const request = async (method, url, data, options = {}) => {
     }
 
     const result = await response.json();
-
+        
     return result;
 
 };
+
 
 export default {
     get: request.bind(null, 'GET'),

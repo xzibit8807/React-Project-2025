@@ -5,7 +5,7 @@ import request from "../utils/request";
 export default function useAuth() {
     const { accessToken, ...authData } = useContext(UserContext);
 
-    const requestWrapper = useCallback((method, url, data, options = {}) => {
+    const myRequest = useCallback((method, url, data, options = {}) => {
         const authOptions = {
             ...options,
             headers: {
@@ -14,15 +14,15 @@ export default function useAuth() {
             }
         };
 
-        return request.baseRequezst(method, url, data, accessToken ? authOptions : options);
+        return request.baseRequest(method, url, data, accessToken ? authOptions : options);
     }, [accessToken]);
 
     const requestObject = useMemo(() => ({
-        get: requestWrapper.bind(null, 'GET'),
-        post: requestWrapper.bind(null, 'POST'),
-        put: requestWrapper.bind(null, 'PUT'),
-        delete: requestWrapper.bind(null, 'DELETE'),
-    }), [requestWrapper])
+        get: myRequest.bind(null, 'GET'),
+        post: myRequest.bind(null, 'POST'),
+        put: myRequest.bind(null, 'PUT'),
+        delete: myRequest.bind(null, 'DELETE'),
+    }), [myRequest])
 
     return {
         ...authData,
@@ -31,4 +31,4 @@ export default function useAuth() {
         isAuthenticated: !!accessToken,
         request: requestObject,
     }
-};zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+};
