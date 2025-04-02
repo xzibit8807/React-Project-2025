@@ -13,7 +13,8 @@ import LoginModule from "./modules/userModules/login/Login";
 import RegisterModule from "./modules/userModules/register/Register";
 import NoPageTemp from "./modules/noPage/NoPage404";
 import SearchComp from "./modules/search/Search";
-import { UserProvider } from "./hooks/context"
+import { UserProvider } from "./hooks/context";
+import ProfileComponent from "./modules/userModules/profile/Profile";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/search" element={<SearchComp />} />
           <Route path="/login" element={<LoginModule />} />
           <Route path="/register" element={<RegisterModule />} />
+          <Route path="/profile" element={<ProfileComponent />} />
         </Routes>
         <FooterComp />
       </UserProvider>

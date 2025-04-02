@@ -1,23 +1,6 @@
-// import { createContext, useContext } from "react";
-
-// export const UserContext = createContext({
-//     _id: '',
-//     email: '',
-//     username: '',
-//     accessToken: '',
-//     userLoginHandler: () => null,
-//     userLogoutHandler: () => null,
-// });
-
-// export function useUserContext() {
-//     const data = useContext(UserContext);
-
-//     return data;
-// }
-
 import { createContext, useState, useContext, useEffect } from "react";
 
-// Initialize the context with default values
+
 export const UserContext = createContext({
     _id: '',
     email: '',
@@ -36,7 +19,6 @@ export function UserProvider({ children }) {
         accessToken: '',
     });
 
-    // Update the state when the component mounts and check localStorage
     useEffect(() => {
         const storedAccessToken = localStorage.getItem("accessToken");
         const storedUserId = localStorage.getItem("userId");
@@ -92,7 +74,6 @@ export function UserProvider({ children }) {
     );
 }
 
-// Custom hook to use UserContext
 export function useUserContext() {
     return useContext(UserContext);
 }
