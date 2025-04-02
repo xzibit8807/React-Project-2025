@@ -1,0 +1,34 @@
+{
+    "-game-1": {
+        "title": "mario kart 8",
+        "category": "Race",
+        "price": "180",
+        "imageUrl": "https://cdn.ozone.bg/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/a/cbda8f0afb48adbd619b6c6fe8984d6a/mario-kart-8-deluxe-nintendo-switch-30.jpg",
+        "description": "Mario Kart 8 is a kart racing game; players control characters from the Mario universe, The Legend of Zelda, Animal Crossing, Splatoon, or the players' Miis, to race in go-karts around a course. They may hinder their opponents or improve their performance using power-ups found in item boxes throughout the course.",
+        "_id": "1"
+    },
+    "-game-2": {
+        "title": "Call of Duty Black Ops 6",
+        "category": "FPS Game",
+        "price": "255",
+        "imageUrl": "https://i.guim.co.uk/img/media/8881b00713cea1b6d3ee22869e815c850aa5767f/2327_0_10239_6150/master/10239.jpg?width=1200&quality=85&auto=format&fit=max&s=e73eb54e09f53634436bdc7c8bae3b73",
+        "description": "First Person shooter game ,with many Levels. Bonus Zombie Mode available. Game is only for Online Play.",
+        "_id": "2"
+    },
+    "game-3": {
+        "title": "Assassins Creed Shadows",
+        "category": "Arcade Game",
+        "price": "450",
+        "imageUrl": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/4305523-ac-shadows-main.jpg",
+        "description": "Set in 16th-century Japan towards the end of the Sengoku period, the game focuses on the millennia-old struggle between the Assassin Brotherhood, who fight for peace and liberty, and the Templar Order, who desire peace through control, from the perspective of two protagonists: Fujibayashi Naoe, a kunoichi (a female shinobi), and Yasuke, an African[b] samurai inspired by the historical figure of the same name. The two characters have a different gameplay style, allowing quests to be approached in multiple ways.",
+        "_id": "3"
+    },
+    "-game-4": {
+        "title": "Mortal Kombat 1",
+        "category": "Fighter",
+        "price": "130",
+        "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1971870/header.jpg?t=1729006754",
+        "description": "Mortal Kombat 1 is both the 12th fighting game and 23rd installment in the Mortal Kombat series developed by NetherRealm Studios and published by Warner Bros. Games. The game was released for Windows, PlayStation 5, Xbox Series X/S, and Nintendo Switch on September 19, 2023, with the premium edition having released on September 14.",
+        "_id": "4"
+    }
+}

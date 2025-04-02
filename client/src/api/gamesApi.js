@@ -3,9 +3,9 @@ import request from "../utils/request";
 import useAuth from "../hooks/auth";
 
 // const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/data/games`;
-const baseUrl = 'localhost:3030/data/games';
+const baseUrl = 'http://localhost:3030/data/games';
 
-export const useGames = () => {
+export const showGames = () => {
     const [games, setGames] = useState([]);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ export const useGames = () => {
     return { games };
 };
 
-export const useGame = (gameId) => {
+export const addGame = (gameId) => {
     const [game, setGame] = useState({});
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export const useGame = (gameId) => {
     };
 };
 
-export const useLatestGames = () => {
+export const showLatestGames = () => {
     const [latestGames, setLatestGames] = useState([]);
 
     useEffect(() => {
@@ -57,7 +57,7 @@ export const useCreateGame = () => {
     }
 };
 
-export const useEditGame = () => {
+export const EditGame = () => {
     const { request } = useAuth();
 
     const edit = (gameId, gameData) =>
@@ -68,7 +68,7 @@ export const useEditGame = () => {
     }
 };
 
-export const useDeleteGame = () => {
+export const DeleteGame = () => {
     const { request } = useAuth();
 
     const deleteGame = (gameId) =>

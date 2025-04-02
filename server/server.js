@@ -1092,8 +1092,8 @@ const { log } = require('console');
                         console.log('Authorized as ' + userData[identity]);
                         user = userData;
                     }
-                    
-                    
+
+
                 }
                 if (user !== undefined) {
                     context.user = user;
@@ -1101,7 +1101,7 @@ const { log } = require('console');
                     throw new CredentialError$1('Invalid access token');
                 }
             }
-            
+
             function register(body) {
                 if (body.hasOwnProperty(identity) === false ||
                     body.hasOwnProperty('password') === false ||
@@ -1126,16 +1126,16 @@ const { log } = require('console');
             }
 
             function login(body) {
-            const targetUser = context.protectedStorage.query('users', { [identity]: body[identity] });
-            if (targetUser.length == 1) {
-                if (hash(body.password) === targetUser[0].hashedPassword) {
-                    const result = targetUser[0];
-                    delete result.hashedPassword;
-                    
-                    const session = saveSession(result._id);
-                    result.accessToken = session.accessToken;
-                    
-                    return result;
+                const targetUser = context.protectedStorage.query('users', { [identity]: body[identity] });
+                if (targetUser.length == 1) {
+                    if (hash(body.password) === targetUser[0].hashedPassword) {
+                        const result = targetUser[0];
+                        delete result.hashedPassword;
+
+                        const session = saveSession(result._id);
+                        result.accessToken = session.accessToken;
+
+                        return result;
                     } else {
                         throw new CredentialError$1('Login or password don\'t match');
                     }
@@ -1351,310 +1351,51 @@ const { log } = require('console');
         }
     };
     var seedData = {
-        recipes: {
-            "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Easy Lasagna",
-                img: "assets/lasagna.jpg",
-                ingredients: [
-                    "1 tbsp Ingredient 1",
-                    "2 cups Ingredient 2",
-                    "500 g  Ingredient 3",
-                    "25 g Ingredient 4"
-                ],
-                steps: [
-                    "Prepare ingredients",
-                    "Mix ingredients",
-                    "Cook until done"
-                ],
-                _createdOn: 1613551279012
-            },
-            "8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Grilled Duck Fillet",
-                img: "assets/roast.jpg",
-                ingredients: [
-                    "500 g  Ingredient 1",
-                    "3 tbsp Ingredient 2",
-                    "2 cups Ingredient 3"
-                ],
-                steps: [
-                    "Prepare ingredients",
-                    "Mix ingredients",
-                    "Cook until done"
-                ],
-                _createdOn: 1613551344360
-            },
-            "985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                name: "Roast Trout",
-                img: "assets/fish.jpg",
-                ingredients: [
-                    "4 cups Ingredient 1",
-                    "1 tbsp Ingredient 2",
-                    "1 tbsp Ingredient 3",
-                    "750 g  Ingredient 4",
-                    "25 g Ingredient 5"
-                ],
-                steps: [
-                    "Prepare ingredients",
-                    "Mix ingredients",
-                    "Cook until done"
-                ],
-                _createdOn: 1613551388703
-            }
-        },
         comments: {
             "0a272c58-b7ea-4e09-a000-7ec988248f66": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                content: "Great recipe!",
-                recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
+                comment: "Great game!",
+                gameId: "2b420d7c-3c8a-4d67-b608-b256228e60dc",
                 _createdOn: 1614260681375,
                 _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
             }
         },
-        records: {
-            i01: {
-                name: "John1",
-                val: 1,
-                _createdOn: 1613551388703
+        games: {
+            "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
+                "-game-1": {
+                    title: "mario kart 8",
+                    category: "Race",
+                    price: "180",
+                    imageUrl: "https://cdn.ozone.bg/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/a/cbda8f0afb48adbd619b6c6fe8984d6a/mario-kart-8-deluxe-nintendo-switch-30.jpg",
+                    description: "Mario Kart 8 is a kart racing game; players control characters from the Mario universe, The Legend of Zelda, Animal Crossing, Splatoon, or the players' Miis, to race in go-karts around a course. They may hinder their opponents or improve their performance using power-ups found in item boxes throughout the course.",
+                    _id: "1"
+                },
+                "-game-2": {
+                    title: "Call of Duty Black Ops 6",
+                    category: "FPS Game",
+                    price: "255",
+                    imageUrl: "https://i.guim.co.uk/img/media/8881b00713cea1b6d3ee22869e815c850aa5767f/2327_0_10239_6150/master/10239.jpg?width=1200&quality=85&auto=format&fit=max&s=e73eb54e09f53634436bdc7c8bae3b73",
+                    description: "First Person shooter game ,with many Levels. Bonus Zombie Mode available. Game is only for Online Play.",
+                    _id: "2"
+                },
+                "game-3": {
+                    title: "Assassins Creed Shadows",
+                    category: "Arcade Game",
+                    price: "450",
+                    imageUrl: "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/4305523-ac-shadows-main.jpg",
+                    description: "Set in 16th-century Japan towards the end of the Sengoku period, the game focuses on the millennia-old struggle between the Assassin Brotherhood, who fight for peace and liberty, and the Templar Order, who desire peace through control, from the perspective of two protagonists: Fujibayashi Naoe, a kunoichi (a female shinobi), and Yasuke, an African[b] samurai inspired by the historical figure of the same name. The two characters have a different gameplay style, allowing quests to be approached in multiple ways.",
+                    _id: "3"
+                },
+                "-game-4": {
+                    title: "Mortal Kombat 1",
+                    category: "Fighter",
+                    price: "130",
+                    imageUrl: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1971870/header.jpg?t=1729006754",
+                    description: "Mortal Kombat 1 is both the 12th fighting game and 23rd installment in the Mortal Kombat series developed by NetherRealm Studios and published by Warner Bros. Games. The game was released for Windows, PlayStation 5, Xbox Series X/S, and Nintendo Switch on September 19, 2023, with the premium edition having released on September 14.",
+                    _id: "4"
+                }
             },
-            i02: {
-                name: "John2",
-                val: 1,
-                _createdOn: 1613551388713
-            },
-            i03: {
-                name: "John3",
-                val: 2,
-                _createdOn: 1613551388723
-            },
-            i04: {
-                name: "John4",
-                val: 2,
-                _createdOn: 1613551388733
-            },
-            i05: {
-                name: "John5",
-                val: 2,
-                _createdOn: 1613551388743
-            },
-            i06: {
-                name: "John6",
-                val: 3,
-                _createdOn: 1613551388753
-            },
-            i07: {
-                name: "John7",
-                val: 3,
-                _createdOn: 1613551388763
-            },
-            i08: {
-                name: "John8",
-                val: 2,
-                _createdOn: 1613551388773
-            },
-            i09: {
-                name: "John9",
-                val: 3,
-                _createdOn: 1613551388783
-            },
-            i10: {
-                name: "John10",
-                val: 1,
-                _createdOn: 1613551388793
-            }
         },
-        catches: {
-            "07f260f4-466c-4607-9a33-f7273b24f1b4": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                angler: "Paulo Admorim",
-                weight: 636,
-                species: "Atlantic Blue Marlin",
-                location: "Vitoria, Brazil",
-                bait: "trolled pink",
-                captureTime: 80,
-                _createdOn: 1614760714812,
-                _id: "07f260f4-466c-4607-9a33-f7273b24f1b4"
-            },
-            "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                angler: "John Does",
-                weight: 554,
-                species: "Atlantic Blue Marlin",
-                location: "Buenos Aires, Argentina",
-                bait: "trolled pink",
-                captureTime: 120,
-                _createdOn: 1614760782277,
-                _id: "bdabf5e9-23be-40a1-9f14-9117b6702a9d"
-            }
-        },
-        furniture: {
-        },
-        orders: {
-        },
-        movies: {
-            "1240549d-f0e0-497e-ab99-eb8f703713d7": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                title: "Black Widow",
-                description: "Natasha Romanoff aka Black Widow confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Comes on the screens 2020.",
-                img: "https://miro.medium.com/max/735/1*akkAa2CcbKqHsvqVusF3-w.jpeg",
-                _createdOn: 1614935055353,
-                _id: "1240549d-f0e0-497e-ab99-eb8f703713d7"
-            },
-            "143e5265-333e-4150-80e4-16b61de31aa0": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                title: "Wonder Woman 1984",
-                description: "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing.",
-                img: "https://pbs.twimg.com/media/ETINgKwWAAAyA4r.jpg",
-                _createdOn: 1614935181470,
-                _id: "143e5265-333e-4150-80e4-16b61de31aa0"
-            },
-            "a9bae6d8-793e-46c4-a9db-deb9e3484909": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                title: "Top Gun 2",
-                description: "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
-                img: "https://i.pinimg.com/originals/f2/a4/58/f2a458048757bc6914d559c9e4dc962a.jpg",
-                _createdOn: 1614935268135,
-                _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909"
-            }
-        },
-        likes: {
-        },
-        ideas: {
-            "833e0e57-71dc-42c0-b387-0ce0caf5225e": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                title: "Best Pilates Workout To Do At Home",
-                description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima possimus eveniet ullam aspernatur corporis tempore quia nesciunt nostrum mollitia consequatur. At ducimus amet aliquid magnam nulla sed totam blanditiis ullam atque facilis corrupti quidem nisi iusto saepe, consectetur culpa possimus quos? Repellendus, dicta pariatur! Delectus, placeat debitis error dignissimos nesciunt magni possimus quo nulla, fuga corporis maxime minus nihil doloremque aliquam quia recusandae harum. Molestias dolorum recusandae commodi velit cum sapiente placeat alias rerum illum repudiandae? Suscipit tempore dolore autem, neque debitis quisquam molestias officia hic nesciunt? Obcaecati optio fugit blanditiis, explicabo odio at dicta asperiores distinctio expedita dolor est aperiam earum! Molestias sequi aliquid molestiae, voluptatum doloremque saepe dignissimos quidem quas harum quo. Eum nemo voluptatem hic corrupti officiis eaque et temporibus error totam numquam sequi nostrum assumenda eius voluptatibus quia sed vel, rerum, excepturi maxime? Pariatur, provident hic? Soluta corrupti aspernatur exercitationem vitae accusantium ut ullam dolor quod!",
-                img: "./images/best-pilates-youtube-workouts-2__medium_4x3.jpg",
-                _createdOn: 1615033373504,
-                _id: "833e0e57-71dc-42c0-b387-0ce0caf5225e"
-            },
-            "247efaa7-8a3e-48a7-813f-b5bfdad0f46c": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                title: "4 Eady DIY Idea To Try!",
-                description: "Similique rem culpa nemo hic recusandae perspiciatis quidem, quia expedita, sapiente est itaque optio enim placeat voluptates sit, fugit dignissimos tenetur temporibus exercitationem in quis magni sunt vel. Corporis officiis ut sapiente exercitationem consectetur debitis suscipit laborum quo enim iusto, labore, quod quam libero aliquid accusantium! Voluptatum quos porro fugit soluta tempore praesentium ratione dolorum impedit sunt dolores quod labore laudantium beatae architecto perspiciatis natus cupiditate, iure quia aliquid, iusto modi esse!",
-                img: "./images/brightideacropped.jpg",
-                _createdOn: 1615033452480,
-                _id: "247efaa7-8a3e-48a7-813f-b5bfdad0f46c"
-            },
-            "b8608c22-dd57-4b24-948e-b358f536b958": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                title: "Dinner Recipe",
-                description: "Consectetur labore et corporis nihil, officiis tempora, hic ex commodi sit aspernatur ad minima? Voluptas nesciunt, blanditiis ex nulla incidunt facere tempora laborum ut aliquid beatae obcaecati quidem reprehenderit consequatur quis iure natus quia totam vel. Amet explicabo quidem repellat unde tempore et totam minima mollitia, adipisci vel autem, enim voluptatem quasi exercitationem dolor cum repudiandae dolores nostrum sit ullam atque dicta, tempora iusto eaque! Rerum debitis voluptate impedit corrupti quibusdam consequatur minima, earum asperiores soluta. A provident reiciendis voluptates et numquam totam eveniet! Dolorum corporis libero dicta laborum illum accusamus ullam?",
-                img: "./images/dinner.jpg",
-                _createdOn: 1615033491967,
-                _id: "b8608c22-dd57-4b24-948e-b358f536b958"
-            }
-        },
-        catalog: {
-            "53d4dbf5-7f41-47ba-b485-43eccb91cb95": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                make: "Table",
-                model: "Swedish",
-                year: 2015,
-                description: "Medium table",
-                price: 235,
-                img: "./images/table.png",
-                material: "Hardwood",
-                _createdOn: 1615545143015,
-                _id: "53d4dbf5-7f41-47ba-b485-43eccb91cb95"
-            },
-            "f5929b5c-bca4-4026-8e6e-c09e73908f77": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                make: "Sofa",
-                model: "ES-549-M",
-                year: 2018,
-                description: "Three-person sofa, blue",
-                price: 1200,
-                img: "./images/sofa.jpg",
-                material: "Frame - steel, plastic; Upholstery - fabric",
-                _createdOn: 1615545572296,
-                _id: "f5929b5c-bca4-4026-8e6e-c09e73908f77"
-            },
-            "c7f51805-242b-45ed-ae3e-80b68605141b": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                make: "Chair",
-                model: "Bright Dining Collection",
-                year: 2017,
-                description: "Dining chair",
-                price: 180,
-                img: "./images/chair.jpg",
-                material: "Wood laminate; leather",
-                _createdOn: 1615546332126,
-                _id: "c7f51805-242b-45ed-ae3e-80b68605141b"
-            }
-        },
-        teams: {
-            "34a1cab1-81f1-47e5-aec3-ab6c9810efe1": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Storm Troopers",
-                logoUrl: "/assets/atat.png",
-                description: "These ARE the droids we're looking for",
-                _createdOn: 1615737591748,
-                _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1"
-            },
-            "dc888b1a-400f-47f3-9619-07607966feb8": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                name: "Team Rocket",
-                logoUrl: "/assets/rocket.png",
-                description: "Gotta catch 'em all!",
-                _createdOn: 1615737655083,
-                _id: "dc888b1a-400f-47f3-9619-07607966feb8"
-            },
-            "733fa9a1-26b6-490d-b299-21f120b2f53a": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                name: "Minions",
-                logoUrl: "/assets/hydrant.png",
-                description: "Friendly neighbourhood jelly beans, helping evil-doers succeed.",
-                _createdOn: 1615737688036,
-                _id: "733fa9a1-26b6-490d-b299-21f120b2f53a"
-            }
-        },
-        members: {
-            "cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-                status: "member",
-                _createdOn: 1616236790262,
-                _updatedOn: 1616236792930
-            },
-            "61a19986-3b86-4347-8ca4-8c074ed87591": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-                status: "member",
-                _createdOn: 1616237188183,
-                _updatedOn: 1616237189016
-            },
-            "8a03aa56-7a82-4a6b-9821-91349fbc552f": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                teamId: "733fa9a1-26b6-490d-b299-21f120b2f53a",
-                status: "member",
-                _createdOn: 1616237193355,
-                _updatedOn: 1616237195145
-            },
-            "9be3ac7d-2c6e-4d74-b187-04105ab7e3d6": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-                status: "member",
-                _createdOn: 1616237231299,
-                _updatedOn: 1616237235713
-            },
-            "280b4a1a-d0f3-4639-aa54-6d9158365152": {
-                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-                status: "member",
-                _createdOn: 1616237257265,
-                _updatedOn: 1616237278248
-            },
-            "e797fa57-bf0a-4749-8028-72dba715e5f8": {
-                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-                status: "member",
-                _createdOn: 1616237272948,
-                _updatedOn: 1616237293676
-            }
-        }
     };
     var rules$1 = {
         users: {
