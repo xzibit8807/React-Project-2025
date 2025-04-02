@@ -15,6 +15,7 @@ import NoPageTemp from "./modules/noPage/NoPage404";
 import SearchComp from "./modules/search/Search";
 import { UserProvider } from "./hooks/context";
 import ProfileComponent from "./modules/userModules/profile/Profile";
+import LogoutComponent from "./modules/userModules/logout/logout";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/login" element={<LoginModule />} />
           <Route path="/register" element={<RegisterModule />} />
           <Route path="/profile" element={<ProfileComponent />} />
+          <Route path="/logout" element={<LogoutComponent />} />
         </Routes>
         <FooterComp />
       </UserProvider>
