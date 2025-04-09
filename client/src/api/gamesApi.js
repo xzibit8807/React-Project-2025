@@ -5,18 +5,21 @@ import useAuth from "../hooks/auth";
 // const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/data/games`;
 const baseUrl = 'http://localhost:3030/data/games';
 
-export const showGames = () => {
-    const [games, setGames] = useState([]);
+// src/api/gamesApi.js
+export async function showGames() {
+    const response = await fetch(baseUrl); // use your actual server URL
+    const data = await response.json();
 
-    useEffect(() => {
-        request.get(baseUrl)
-            .then(setGames)
-    }, []);
+    // Flatten the nested structure
+    const gameArray = Object.values(data.games).flatMap(gameGroup =>
+        Object.values(gameGroup)
+    );
 
-    return { games };
-};
+    return gameArray;
+}
 
-export const addGame = (gameId) => {
+
+export const useGame = (gameId) => {
     const [game, setGame] = useState({});
 
     useEffect(() => {
@@ -46,7 +49,7 @@ export const showLatestGames = () => {
     return { latestGames };
 };
 
-export const useCreateGame = () => {
+export const actionCreateGame = () => {
     const { request } = useAuth();
 
     const create = (gameData) =>

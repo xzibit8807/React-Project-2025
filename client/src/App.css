@@ -568,6 +568,7 @@ button {
 }
 
 .product_section {
+  margin-top: 80px;
   width: 100%;
   float: left;
 }
@@ -581,17 +582,19 @@ button {
   width: 100%;
   float: left;
   font-size: 50px;
-  color: #24292f;
+  color: #29a34a;
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
 .long_text {
   width: 100%;
   float: left;
   font-size: 16px;
-  color: #363636;
+  color: #8f187b;
   margin-left: 0px;
   text-align: center;
 }

@@ -16,6 +16,7 @@ import SearchComp from "./modules/search/Search";
 import { UserProvider } from "./hooks/context";
 import ProfileComponent from "./modules/userModules/profile/Profile";
 import LogoutComponent from "./modules/userModules/logout/logout";
+import AddGameComponent from "./modules/add-game/Add-Game";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/register" element={<RegisterModule />} />
           <Route path="/profile" element={<ProfileComponent />} />
           <Route path="/logout" element={<LogoutComponent />} />
+          <Route path="/games/create" element={<AddGameComponent/>} />
         </Routes>
         <FooterComp />
       </UserProvider>
