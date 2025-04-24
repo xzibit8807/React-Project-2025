@@ -13,14 +13,21 @@
     margin-right: 30px;
 }
 
+.img{
+    width: 20%;
+}
+
 .search-input {
-    padding: 10px;
-    border: none;
+    padding: 15px;
+    margin: 50px;
+    border:rgb(51, 121, 153);
+    border-style: double;
+    border-width: 5px;
     border-radius: 5px 0 0 5px;
     flex: 1;
     font-size: 16px;
-    outline: none;
-    width: 100%; /* Ensure input takes full width */
+    outline: none; 
+    width: 70%; 
 }
 
 .search-button {

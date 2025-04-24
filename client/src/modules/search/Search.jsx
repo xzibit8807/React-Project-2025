@@ -35,6 +35,7 @@ export default function SearchComp() {
 
     return (
         <div className="search-container">
+            <img className='img' src='https://www.logoground.com/uploads9/dv9y2021498032021-03-234053966LOGOGROUND.jpg'/>
             <input
                 type="text"
                 placeholder="Search for games..."
