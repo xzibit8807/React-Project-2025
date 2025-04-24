@@ -7,12 +7,12 @@ const authRoutes = require('./routes/auth');
 const gameRoutes = require('./routes/games');
 
 const app = express();
-const port = 3000;
+const port = 3030;
 app.use(cors());
 app.use(express.json());
 
-app.use('/api', authRoutes);
-app.use('/api/games', gameRoutes);
+app.use('/users', authRoutes);
+app.use('/games', gameRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
