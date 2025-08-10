@@ -1,0 +1,200 @@
+{
+    "info": {
+        "name": "GameServer Backend",
+        "_postman_id": "e1d85bfb-8d52-4d80-9a3b-8db2ad812345",
+        "description": "Endpoints for GameServer backend with Auth & Games CRUD",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Register User",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3030/users/register",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030",
+                    "path": [
+                        "users",
+                        "register"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"1234\",\n  \"confirmPassword\": \"1234\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Login User",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3030/users/login",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030",
+                    "path": [
+                        "users",
+                        "login"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"1234\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Create Game",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3030/games",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030",
+                    "path": [
+                        "games"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"title\": \"Cool Game\",\n  \"imageUrl\": \"https://example.com/img.jpg\",\n  \"price\": 19.99,\n  \"category\": \"Action\",\n  \"description\": \"Fun game\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Get All Games",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3030/games",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030",
+                    "path": [
+                        "games"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Game By ID",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3030/games/{{gameId}}",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030",
+                    "path": [
+                        "games",
+                        "{{gameId}}"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Game",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3030/games/{{gameId}}",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030",
+                    "path": [
+                        "games",
+                        "{{gameId}}"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"price\": 15.99\n}"
+                }
+            }
+        },
+        {
+            "name": "Delete Game",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3030/games/{{gameId}}",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3030",
+                    "path": [
+                        "games",
+                        "{{gameId}}"
+                    ]
+                }
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "token",
+            "value": ""
+        },
+        {
+            "key": "gameId",
+            "value": ""
+        }
+    ]
+}

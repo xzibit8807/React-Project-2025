@@ -1,12 +1,13 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const mongoose = require("mongoose");
+const bcrypt = require(`bcrypt`);
 
-const { ObjectId } = mongoose.Schema.Types;
+const { schema, model, MongooseError } = require(`mongoose`);
 
 const userSchema = new mongoose.Schema({
+
     email: {
         type: String,
-        required: [true, `Email is required.`],
+        required: [true,`Email is required.`],
         lowercase: true,
         unique: true,
         minlength: 10,
@@ -14,7 +15,7 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: [true, `Password is required.`],
+        required: [true,`Password is required.`],
         minlength: [4, `Min length of the Password is 4 characters.`]
     },
     AddedGamesCatalog: [{
@@ -37,29 +38,22 @@ const userSchema = new mongoose.Schema({
     timestamps: { createdAt: 'created_at' }
 });
 
-userSchema.methods = {
-    matchPassword: function (password) {
-        return bcrypt.compare(password, this.password);
-    }
-}
+userSchema.pre(`save`, async function () {
 
-userSchema.pre('save', function (next) {
-    if (this.isModified('password')) {
-        bcrypt.genSalt(saltRounds, (err, salt) => {
-            if (err) {
-                next(err);
-            }
-            bcrypt.hash(this.password, salt, (err, hash) => {
-                if (err) {
-                    next(err);
-                }
-                this.password = hash;
-                next();
-            })
-        })
-        return;
-    }
-    next();
+    this.password = await bcrypt.hash(this.password, 12);
+
 });
 
-module.exports = mongoose.model('User', userSchema);
+
+userSchema.virtual(`rePassword`)
+    .set(function (value) {
+        if (value !== this.password) {
+            throw new MongooseError(`Password dose not match !`);
+        }
+    });
+
+const User = model(`User`, userSchema);
+
+module.exports = User;
+
+// module.exports = mongoose.model('User', userSchema);

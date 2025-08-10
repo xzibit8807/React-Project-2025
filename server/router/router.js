@@ -8,9 +8,9 @@ const router = require('express').Router();
 const { authController } = require('../controllers');
 const auth = require("../routes/auth")
 
-router.post('/register', auth);
-router.post('/login', authController.login);
-router.post('/logout', authController.logout);
+router.post('/users/register', auth);
+router.post('/users/login', authController.login);
+router.post('/users/logout', authController.logout);
 
 // router.use('/users', users);
 // router.use('/games', games);

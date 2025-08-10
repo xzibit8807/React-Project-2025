@@ -23,7 +23,7 @@ export default function RegisterModule() {
 
         const authData = await register(email, password);
 
-        userLoginHandler(authData);
+        // userLoginHandler(authData);
 
         navigate('/');
     }
