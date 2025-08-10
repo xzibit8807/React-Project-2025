@@ -10,15 +10,17 @@ const request = async (method, url, data, options = {}) => {
     }
 
     if (data) {
-        options = {
-            ...options,
-            headers: {
-                'Content-Type': 'application/json',
-                ...options.headers,
-            },
-            body: JSON.stringify(data),
-        }
-    }
+    options = {
+        ...options,
+        method, // keep the HTTP method!
+        headers: {
+            'Content-Type': 'application/json',
+            ...options.headers,
+        },
+        body: JSON.stringify(data),
+    };
+}
+
     // options.credentials = 'include'; 
     const response = await fetch(url, options);
     

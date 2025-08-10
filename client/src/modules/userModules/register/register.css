@@ -1,10 +1,26 @@
 .gradient-custom {
     /* fallback for old browsers */
     background: #6a11cb;
-    
+
     /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-    
+
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
-    }
+}
+
+.toggle-password {
+    width: 40px;
+    position: flex;
+    right: 15px;
+    top: 80%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 32px;
+}
+
+.error-text {
+    color: red;
+    font-size: 22px;
+    margin-top: 4px;
+}
