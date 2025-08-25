@@ -4,7 +4,7 @@
     export const UserContext = createContext({
         _id: '',
         email: '',
-        username: '',
+        // username: '',
         accessToken: '',
         userLoginHandler: () => null,
         userLogoutHandler: () => null,
@@ -15,7 +15,7 @@
         const [userData, setUserData] = useState({
             _id: '',
             email: '',
-            username: '',
+            // username: '',
             accessToken: '',
         });
 
@@ -23,29 +23,29 @@
             const storedAccessToken = localStorage.getItem("accessToken");
             const storedUserId = localStorage.getItem("userId");
             const storedEmail = localStorage.getItem("email");
-            const storedUsername = localStorage.getItem("username");
+            // const storedUsername = localStorage.getItem("username");
 
             if (storedAccessToken) {
                 setUserData({
                     accessToken: storedAccessToken,
                     _id: storedUserId,
                     email: storedEmail,
-                    username: storedUsername,
+                    // username: storedUsername,
                 });
             }
         }, []);
 
-        const userLoginHandler = (token, userId, email, username) => {
+        const userLoginHandler = (token, userId, email, /*username*/) => {
             localStorage.setItem("accessToken", token);
             localStorage.setItem("userId", userId);
             localStorage.setItem("email", email);
-            localStorage.setItem("username", username);
+            // localStorage.setItem("username", username);
 
             setUserData({
                 accessToken: token,
                 _id: userId,
                 email: email,
-                username: username,
+                // username: username,
             });
         };
 
@@ -53,19 +53,20 @@
             localStorage.removeItem("accessToken");
             localStorage.removeItem("userId");
             localStorage.removeItem("email");
-            localStorage.removeItem("username");
+            // localStorage.removeItem("username");
 
             setUserData({
                 accessToken: '',
                 _id: '',
                 email: '',
-                username: '',
+                // username: '',
             });
         };
 
         return (
             <UserContext.Provider value={{
                 ...userData,
+                setUserData, 
                 userLoginHandler,
                 userLogoutHandler,
             }}>

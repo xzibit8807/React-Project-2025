@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router";
 
 import './App.css'
+import GuestRoute from "./hooks/guestRoute";
+import ProtectedRoute from "./hooks/ProtectedRoute";
 
 import HeaderComp from './modules/header/Header'
 import FooterComp from './modules/footer/Footer'
@@ -31,13 +33,13 @@ function App() {
           <Route path="/contact" element={<ContactUsComp />} />
           <Route path="/products" element={<ProductsComp />} />
           <Route path="*" element={<NoPageTemp />} />
-          <Route path="/blog" element={<BlogComp />} />
+          <Route path="/blog" element={<ProductsComp><BlogComp /></ProductsComp>} />
           <Route path="/search" element={<SearchComp />} />
-          <Route path="/login" element={<LoginModule />} />
-          <Route path="/register" element={<RegisterModule />} />
-          <Route path="/profile" element={<ProfileComponent />} />
-          <Route path="/logout" element={<LogoutComponent />} />
-          <Route path="/games/create" element={<AddGameComponent/>} />
+          <Route path="/login" element={<GuestRoute><LoginModule /></GuestRoute>} />
+          <Route path="/register" element={<GuestRoute><RegisterModule /></GuestRoute>} />
+          <Route path="/profile" element={<ProtectedRoute><ProfileComponent /></ProtectedRoute>} />
+          <Route path="/logout" element={<ProtectedRoute><LogoutComponent /></ProtectedRoute>} />
+          <Route path="/games/create" element={<ProtectedRoute><AddGameComponent/></ProtectedRoute>} />
         </Routes>
         <FooterComp />
       </UserProvider>

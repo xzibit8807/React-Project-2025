@@ -6,17 +6,47 @@ import { UserContext } from "../hooks/context";
 // const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/users`;
 const baseUrl = 'http://localhost:3030/users';
 
-export const useLogin = () => {
-    const login = async (email, password) =>
-        request.post(
-            `${baseUrl}/login`,
-            { email, password },
-        );
 
-    return {
-        login,
-    }
+export const useLogin = () => {
+    const { setUserData } = useContext(UserContext);
+
+    const login = async (email, password) => {
+        try {
+            const response = await request.post(
+                `${baseUrl}/login`,
+                { email, password },
+                { headers: { "Content-Type": "application/json" } }
+            );
+
+            console.log("Login API data:", response);
+
+            // The backend returns { message, token }
+            const { token } = response;
+
+            if (!token) {
+                throw new Error("Login failed: No token received");
+            }
+
+            // Store in localStorage
+            localStorage.setItem("accessToken", token);
+            localStorage.setItem("email", email); // we already have it from login form
+
+            // Update React context
+            setUserData({
+                accessToken: token,
+                email,
+            });
+
+            return { accessToken: token, email };
+        } catch (err) {
+            console.error("Login error:", err.message);
+            throw err;
+        }
+    };
+
+    return { login };
 };
+
 
 // export const useLogin = () => {
 //     const login = async (email, password) => {

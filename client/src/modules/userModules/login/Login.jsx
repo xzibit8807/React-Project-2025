@@ -55,20 +55,21 @@ export default function LoginModule() {
         }
 
         try {
-            console.log("Attempting login with:", { email, password });  // Debug log
+            console.log("Attempting login with:", { email, password }); 
 
             const authData = await login(email, password);
 
-            console.log("Login response:", authData);  // Debug response
+            console.log("Login response:", authData); 
 
             if (!authData.accessToken) {
                 throw new Error("No access token received");
             }
-
+            
             userLoginHandler(authData);
 
             toast.success('Successful Login');
             navigate('/');
+
         } catch (err) {
             toast.error(err.message || 'Login failed');
         }
