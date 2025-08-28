@@ -10,7 +10,7 @@
         userLogoutHandler: () => null,
     });
 
-    // Create a provider to manage the context
+
     export function UserProvider({ children }) {
         const [userData, setUserData] = useState({
             _id: '',
