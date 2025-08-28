@@ -19,6 +19,7 @@ import { UserProvider } from "./hooks/context";
 import ProfileComponent from "./modules/userModules/profile/Profile";
 import LogoutComponent from "./modules/userModules/logout/logout";
 import AddGameComponent from "./modules/add-game/Add-Game";
+import ProductDetails from "./modules/productDetails/ProductDetails";
 
 
 function App() {
@@ -32,14 +33,15 @@ function App() {
           <Route path="/about" element={<AboutComp />} />
           <Route path="/contact" element={<ContactUsComp />} />
           <Route path="/products" element={<ProductsComp />} />
+          <Route path="/products/:id" element={<ProtectedRoute><ProductDetails /></ProtectedRoute>} />
           <Route path="*" element={<NoPageTemp />} />
-          <Route path="/blog" element={<ProductsComp><BlogComp /></ProductsComp>} />
+          <Route path="/blog" element={<ProtectedRoute><BlogComp /></ProtectedRoute>} />
           <Route path="/search" element={<SearchComp />} />
           <Route path="/login" element={<GuestRoute><LoginModule /></GuestRoute>} />
           <Route path="/register" element={<GuestRoute><RegisterModule /></GuestRoute>} />
           <Route path="/profile" element={<ProtectedRoute><ProfileComponent /></ProtectedRoute>} />
           <Route path="/logout" element={<ProtectedRoute><LogoutComponent /></ProtectedRoute>} />
-          <Route path="/games/create" element={<ProtectedRoute><AddGameComponent/></ProtectedRoute>} />
+          <Route path="/games/create" element={<ProtectedRoute><AddGameComponent /></ProtectedRoute>} />
         </Routes>
         <FooterComp />
       </UserProvider>

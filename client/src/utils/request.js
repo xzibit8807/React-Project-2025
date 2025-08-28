@@ -1,45 +1,43 @@
 const request = async (method, url, data, options = {}) => {
-    options.headers = {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
+    const token = localStorage.getItem("accessToken");
+
+    const headers = {
+        "Content-Type": "application/json",
         ...options.headers,
     };
-    
-    if (method !== 'GET') {
-        options.method = method;
+
+    if (token) {
+        headers["Authorization"] = `Bearer ${token}`;
     }
 
-    if (data) {
-    options = {
-        ...options,
-        method, // keep the HTTP method!
-        headers: {
-            'Content-Type': 'application/json',
-            ...options.headers,
-        },
-        body: JSON.stringify(data),
-    };
-}
+    const response = await fetch(url, {
+        method,
+        headers, // ✅ always use this one
+        body: data ? JSON.stringify(data) : undefined,
+    });
 
-    // options.credentials = 'include'; 
-    const response = await fetch(url, options);
-    
-    const responseContentType = response.headers.get('Content-Type');
+    // console.log("📡 Request:", method, url, {
+    //     headers,
+    //     body: data ? JSON.stringify(data) : undefined,
+    // });
+    // console.log("📡 Sending Authorization header:", headers["Authorization"]);
+
+
+    const responseContentType = response.headers.get("Content-Type");
     if (!responseContentType) {
         return;
     }
 
     if (!response.ok) {
-        const result = await response.json()
-
+        const result = await response.json().catch(() => ({}));
         throw result;
     }
+    // console.log("📡 Sending Authorization header:", headers["Authorization"]);
 
-    const result = await response.json();
-        
-    return result;
 
+    return response.json();
 };
+
 
 
 export default {

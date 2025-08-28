@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { showGames } from "../../api/gamesApi";
 import GamesProducts from "./gameProducts/gamesProducts";
 
+import "./products.css";
+
 export default function ProductsComp() {
     const [games, setGames] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -17,7 +19,6 @@ export default function ProductsComp() {
                 setLoading(false);
             }
         }
-
         loadGames();
     }, []);
 
@@ -25,9 +26,6 @@ export default function ProductsComp() {
         <div className="product_section layout_padding">
             <div className="container">
                 <h1 className="product_text">Our <span>products</span></h1>
-                <p className="long_text">
-                    It is a long established fact that a reader will be distracted by the readable content...
-                </p>
                 <div className="product_section_2 row">
                     {loading ? (
                         <h3 className="product_text">Loading games...</h3>

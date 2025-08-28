@@ -2,21 +2,19 @@ import { useEffect, useState } from "react";
 import request from "../utils/request";
 import useAuth from "../hooks/auth";
 
-// const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/data/games`;
-const baseUrl = 'http://localhost:3030/data/games';
+// const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/games`;
+const baseUrl = 'http://localhost:3030/games';
 
-// src/api/gamesApi.js
+
 export async function showGames() {
-    const response = await fetch(baseUrl); // use your actual server URL
-    const data = await response.json();
-
-    // Flatten the nested structure
-    const gameArray = Object.values(data.games).flatMap(gameGroup =>
-        Object.values(gameGroup)
-    );
-
-    return gameArray;
+    const response = await fetch("http://localhost:3030/games");
+    if (!response.ok) {
+        throw new Error(`Failed to fetch games: ${response.status}`);
+    }
+    const result = await response.json();
+    return Array.isArray(result) ? result : Object.values(result);
 }
+
 
 
 export const useGame = (gameId) => {
@@ -49,15 +47,11 @@ export const showLatestGames = () => {
     return { latestGames };
 };
 
-export const actionCreateGame = () => {
-    const { request } = useAuth();
 
+export const actionCreateGame = () => {
     const create = (gameData) =>
         request.post(baseUrl, gameData);
-
-    return {
-        create,
-    }
+    return { create };
 };
 
 export const EditGame = () => {

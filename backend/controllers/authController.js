@@ -42,8 +42,14 @@ exports.login = async (req, res) => {
         const token = jwt.sign({ id: user._id, email: user.email }, process.env.JWT_SECRET, {
             expiresIn: '1h'
         });
-
-        res.json({ message: 'Login successful.', token });
+        // console.log("Generated JWT:", token);
+        // console.log("Payload used:", { id: user._id, email: user.email });
+        res.json({
+            message: "Login successful.",
+            token,
+            _id: user._id,
+            email: user.email,
+        });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

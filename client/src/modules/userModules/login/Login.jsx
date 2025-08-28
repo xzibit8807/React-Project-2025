@@ -2,13 +2,13 @@ import "./login.css";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { useLogin } from "../../../api/authApi";
-import { UserContext } from "../../../hooks/context";
 import { toast } from 'react-toastify';
+import { useUserContext } from "../../../hooks/context";
 
 export default function LoginModule() {
 
     const navigate = useNavigate();
-    const { userLoginHandler } = useContext(UserContext);
+    const { userLoginHandler } = useUserContext();
     const { login } = useLogin();
 
     const [email, setEmail] = useState("");
@@ -42,11 +42,9 @@ export default function LoginModule() {
         return errors;
     };
 
+
     const loginHandler = async (event) => {
         event.preventDefault();
-
-        validateField("email", email);
-        validateField("password", password);
 
         const errors = validateForm(email, password);
         if (Object.keys(errors).length > 0) {
@@ -55,25 +53,24 @@ export default function LoginModule() {
         }
 
         try {
-            console.log("Attempting login with:", { email, password }); 
-
             const authData = await login(email, password);
-
-            console.log("Login response:", authData); 
+            // console.log("Login response:", authData);
 
             if (!authData.accessToken) {
                 throw new Error("No access token received");
             }
-            
-            userLoginHandler(authData);
 
-            toast.success('Successful Login');
-            navigate('/');
+            // save in context
+            userLoginHandler(authData.accessToken, authData._id, authData.email);
 
+            toast.success("Successful Login");
+            navigate("/");
         } catch (err) {
-            toast.error(err.message || 'Login failed');
+            toast.error(err.message || "Login failed");
         }
     };
+
+
 
     return (
         <form id="login" onSubmit={loginHandler} noValidate>
@@ -137,7 +134,7 @@ export default function LoginModule() {
                                     <button
                                         className="btn btn-outline-light btn-lg px-5"
                                         type="submit"
-                                        disabled={false}  // you can add isPending state if you want
+                                        disabled={false}
                                     >
                                         Login
                                     </button>

@@ -18,26 +18,35 @@ export const useLogin = () => {
                 { headers: { "Content-Type": "application/json" } }
             );
 
-            console.log("Login API data:", response);
+            // console.log("Login API data:", response);
 
-            // The backend returns { message, token }
-            const { token } = response;
+            // Destructure everything returned from backend
+            const { token, _id, email: userEmail } = response;
 
             if (!token) {
                 throw new Error("Login failed: No token received");
             }
 
-            // Store in localStorage
+            // Store consistently
             localStorage.setItem("accessToken", token);
-            localStorage.setItem("email", email); // we already have it from login form
+            localStorage.setItem("userId", _id);
+            localStorage.setItem("email", userEmail);
 
-            // Update React context
+            // Update context
             setUserData({
                 accessToken: token,
-                email,
+                email: userEmail,
+                userId: _id,
             });
 
-            return { accessToken: token, email };
+            // console.log("🔑 Stored accessToken:", localStorage.getItem("accessToken"));
+            // console.log("📦 localStorage content:", {
+            //     accessToken: localStorage.getItem("accessToken"),
+            //     userId: localStorage.getItem("userId"),
+            //     email: localStorage.getItem("email"),
+            // });
+
+            return { accessToken: token, email: userEmail, userId: _id };
         } catch (err) {
             console.error("Login error:", err.message);
             throw err;
@@ -46,30 +55,6 @@ export const useLogin = () => {
 
     return { login };
 };
-
-
-// export const useLogin = () => {
-//     const login = async (email, password) => {
-//         const response = await request.post(`${baseUrl}/login`, { email, password });
-//         const { accessToken, user } = response.data;
-
-//         // ✅ Fix: Ensure response has an accessToken before storing it
-//         if (response.accessToken) {
-//             // localStorage.setItem('accessToken', response.accessToken);
-//             localStorage.setItem('accessToken', accessToken);
-//             localStorage.setItem('userId', user._id);
-//             localStorage.setItem('email', user.email);
-//         }
-//         setUserData({
-//             accessToken,
-//             _id: user._id,
-//             email: user.email,
-//         });
-//         return response;
-//     };
-
-//     return { login };
-// };
 
 
 

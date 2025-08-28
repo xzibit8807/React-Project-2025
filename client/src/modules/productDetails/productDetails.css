@@ -1,0 +1,37 @@
+/* productDetails.css */
+.container {
+    padding-top: 90px;
+    /* push content below header */
+}
+
+.imgClass {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.titleClass {
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.price {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    color: red;
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+.category {
+    font-size: 40px;
+    color: blue;
+    font-weight: bold;
+    position: static;
+}
+
+.information {
+    font-size: 1rem;
+    line-height: 1.5;
+}
