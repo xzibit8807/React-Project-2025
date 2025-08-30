@@ -4,7 +4,7 @@ import request from "../utils/request";
 import { UserContext } from "../hooks/context";
 
 // const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/users`;
-const baseUrl = 'http://localhost:3030/users';
+const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/users`;
 
 
 export const useLogin = () => {

@@ -2,12 +2,10 @@ import { useEffect, useState } from "react";
 import request from "../utils/request";
 import useAuth from "../hooks/auth";
 
-// const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/games`;
-const baseUrl = 'http://localhost:3030/games';
-
+const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/games`;
 
 export async function showGames() {
-    const response = await fetch("http://localhost:3030/games");
+    const response = await fetch(baseUrl);
     if (!response.ok) {
         throw new Error(`Failed to fetch games: ${response.status}`);
     }
