@@ -1,13 +1,13 @@
-FROM node:22
+FROM node:18
 
-ENV PORT =3030
+WORKDIR /usr/src/app
 
-WORKDIR usr/src/app
+COPY package*.json ./
+RUN npm install --production
 
-COPY package.json ./
+COPY . .
 
-RUN npm install
+ENV PORT 8080
+EXPOSE 8080
 
-EXPOSE 3030
-
-CMD [ "npm", "run", "start" ]
+CMD ["node", "server.js"]
