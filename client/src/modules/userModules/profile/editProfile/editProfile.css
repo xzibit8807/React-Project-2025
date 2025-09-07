@@ -1,13 +1,12 @@
 .profile-container {
     background: linear-gradient(to bottom right, #4a90e2, #357abd);
-    max-width: 450px;
+    max-width: 500px;
     margin: auto;
     margin-top: 120px;
     padding: 30px;
     border-radius: 18px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     color: white;
-    text-align: center;
     font-family: "Segoe UI", sans-serif;
 }
 
@@ -15,6 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .profile-avatar {
@@ -26,38 +26,72 @@
     object-fit: cover;
 }
 
-.name-container {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+.profile-email {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    margin-top: -5px;
 }
 
 .section-title {
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: bold;
     margin-bottom: 10px;
     color: #f5f5f5;
 }
 
-.description {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #e0e0e0;
-    margin-bottom: 20px;
+.profile-section {
+    margin-top: 20px;
+    text-align: left;
 }
 
-.buttonEdit {
-    display: inline-block;
+textarea,
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.action-btn {
     padding: 12px 20px;
     background-color: chartreuse;
     color: #1d1d1d;
     font-weight: bold;
-    text-decoration: none;
+    border: none;
     border-radius: 10px;
+    cursor: pointer;
     transition: 0.3s ease;
+    display: inline-block;
 }
 
-.buttonEdit:hover {
+.back-btn {
+    padding: 12px 20px;
+    margin-left: -400px;
+    background-color: chartreuse;
+    color: #1d1d1d;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.action-btn:hover {
     background-color: forestgreen;
     color: white;
+}
+
+.message {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    font-weight: bold;
 }

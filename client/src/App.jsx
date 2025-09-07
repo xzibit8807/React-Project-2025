@@ -17,6 +17,7 @@ import NoPageTemp from "./modules/noPage/NoPage404";
 import SearchComp from "./modules/search/Search";
 import { UserProvider } from "./hooks/context";
 import ProfileComponent from "./modules/userModules/profile/Profile";
+import EditProfileComponent from "./modules/userModules/profile/editProfile/editProfile"
 import LogoutComponent from "./modules/userModules/logout/logout";
 import AddGameComponent from "./modules/add-game/Add-Game";
 import ProductDetails from "./modules/productDetails/ProductDetails";
@@ -40,6 +41,7 @@ function App() {
           <Route path="/login" element={<GuestRoute><LoginModule /></GuestRoute>} />
           <Route path="/register" element={<GuestRoute><RegisterModule /></GuestRoute>} />
           <Route path="/profile" element={<ProtectedRoute><ProfileComponent /></ProtectedRoute>} />
+          <Route path="/profile/edit" element={<ProtectedRoute><EditProfileComponent /></ProtectedRoute>} />
           <Route path="/logout" element={<ProtectedRoute><LogoutComponent /></ProtectedRoute>} />
           <Route path="/games/create" element={<ProtectedRoute><AddGameComponent /></ProtectedRoute>} />
         </Routes>
