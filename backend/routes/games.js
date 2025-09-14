@@ -24,6 +24,7 @@ const validate = (req, res, next) => {
 
 // Public
 router.get('/', gamesController.getAllGames);
+router.get('/search', gamesController.searchGames);
 router.get('/:id', gamesController.getGameById);
 
 // Protected + validated

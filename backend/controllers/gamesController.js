@@ -42,6 +42,24 @@ exports.getGameById = async (req, res) => {
     }
 };
 
+// SEARCH
+exports.searchGames = async (req, res) => {
+    try {
+        const { q } = req.query;
+        if (!q || q.trim() === "") {
+            return res.json([]);
+        }
+        const games = await Game.find({
+            title: { $regex: q, $options: "i" }
+        }).sort({ createdAt: -1 });
+
+        res.json(games);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+
 // UPDATE
 exports.updateGame = async (req, res) => {
     try {

@@ -13,8 +13,6 @@ export async function showGames() {
     return Array.isArray(result) ? result : Object.values(result);
 }
 
-
-
 export const useGame = (gameId) => {
     const [game, setGame] = useState({});
 
@@ -62,6 +60,14 @@ export const EditGame = () => {
         edit,
     }
 };
+
+export async function searchGames(query) {
+    const response = await fetch(`${baseUrl}/search?q=${encodeURIComponent(query)}`);
+    if (!response.ok) {
+        throw new Error(`Failed to search games: ${response.status}`);
+    }
+    return await response.json();
+}
 
 export const DeleteGame = () => {
     const { request } = useAuth();

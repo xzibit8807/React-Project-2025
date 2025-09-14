@@ -1,41 +1,33 @@
-import React, { useState } from 'react';
-import './search.css'; // Import the CSS file
-
-// Sample data for games (replace with your actual data source)
-const games = [
-    'The Legend of Zelda',
-    'Super Mario Odyssey',
-    'Minecraft',
-    'Fortnite',
-    'League of Legends',
-    'Call of Duty',
-    'Overwatch',
-    'Apex Legends',
-];
+import React, { useState } from "react";
+import { Link } from "react-router";
+import "./search.css";
+import { searchGames } from "../../api/gamesApi";
 
 export default function SearchComp() {
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState("");
     const [results, setResults] = useState([]);
-    const [message, setMessage] = useState('');
+    const [message, setMessage] = useState("");
 
-    const handleSearch = () => {
-        if (searchTerm.trim() === '') {
-            setMessage('Please enter a search term.');
+    const handleSearch = async () => {
+        if (searchTerm.trim() === "") {
+            setMessage("Please enter a search term.");
             setResults([]);
             return;
         }
 
-        const filteredResults = games.filter(game =>
-            game.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-
-        setResults(filteredResults);
-        setMessage(filteredResults.length === 0 ? 'No Results Found, please try again.' : '');
+        try {
+            const filteredResults = await searchGames(searchTerm);
+            setResults(filteredResults);
+            setMessage(filteredResults.length === 0 ? "No Results Found, please try again." : "");
+        } catch (err) {
+            console.error("Search error:", err);
+            setMessage("Error fetching results.");
+        }
     };
+
 
     return (
         <div className="search-container">
-            <img className='img' src='https://www.logoground.com/uploads9/dv9y2021498032021-03-234053966LOGOGROUND.jpg'/>
             <input
                 type="text"
                 placeholder="Search for games..."
@@ -43,15 +35,20 @@ export default function SearchComp() {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="search-input"
             />
-            <button onClick={handleSearch} className="search-button">
-                Search
-            </button>
-            <p>Search for posable results:</p>
+            <button onClick={handleSearch} className="search-button">Search</button>
+
             {message && <div className="no-results-message">{message}</div>}
+
             {results.length > 0 && (
                 <ul className="results-list">
-                    {results.map((game, index) => (
-                        <li key={index} className="result-item">{game}</li>
+                    {results.map((game) => (
+                        <li key={game._id} className="result-item">
+                            <Link to={`/details/${game._id}`}>
+                                <strong>{game.title}</strong>
+                            </Link>
+                            <div>{game.price} лв</div>
+                            <img src={game.imageUrl} alt={game.title} width="120" />
+                        </li>
                     ))}
                 </ul>
             )}
