@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const authRoutes = require('../routes/auth');
 const gamesRoutes = require('../routes/games');
+const commentRoutes = require("../routes/comments");
 
 router.get("/", (req, res) => {
     res.status(200).send("✅ API is running!");
@@ -12,5 +13,7 @@ router.get("/status", (req, res) => {
 
 router.use('/users', authRoutes);
 router.use('/games', gamesRoutes);
+router.use("/comments", commentRoutes);
+
 
 module.exports = router;
