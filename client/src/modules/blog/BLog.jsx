@@ -19,22 +19,23 @@ export default function BlogComp() {
         fetchComments();
     }, []);
 
-    const handleCommentSubmit = async (e) => {
-        console.log("Submit clicked:", newComment);
-        e.preventDefault();
-        if (user && newComment.trim()) {
-            try {
-                const saved = await addComment({
-                    user: user.email,
-                    comment: newComment,
-                });
-                setComments([saved, ...comments]);
-                setNewComment("");
-            } catch (err) {
-                console.error("Error posting comment:", err);
-            }
+    const { email, _id, accessToken } = useUserContext();
+
+    const handleCommentSubmit = async () => {
+        if (!email) {
+            console.error("❌ No user in context");
+            return;
         }
+
+        await commentApi.addComment({
+            blogId,
+            text: newComment,
+            authorEmail: email,
+        });
     };
+
+
+
 
     return (
         <div className="blog-post">
